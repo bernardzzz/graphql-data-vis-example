@@ -1,3 +1,4 @@
+require('../data')
 const videoA = {
   id: 'a',
   title: 'Create a GraphQL Schema',
