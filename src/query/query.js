@@ -4,33 +4,33 @@ const {
     GraphQLList,
     GraphQLNonNull
 } = require('graphql');
-const { videoType } = require('../schema/types');
+const { testPlanType } = require('../schema/types');
 const {
-    getVideos,
-    getVideoById,
+    getTestPlans,
+    getTestPlanById,
 } = require('../resolver/resolvers');
 
-const queryType = new GraphQLObjectType({
-  name: 'QueryType',
-  description: 'The root query type.',
-  fields: {
-    videos: {
-      type: new GraphQLList(videoType),
-      resolve: getVideos,
-    },
-    video: {
-      type: videoType,
-      args: {
-        id: {
-          type: new GraphQLNonNull(GraphQLID),
-          description: 'The id of the video.',
-        },
-      },
-      resolve: (_, args) => {
-        return getVideoById(args.id);
-      },
-    },
-  },
-});
 
-exports.queryType = queryType;
+const rootQueryType = new GraphQLObjectType({
+    name: 'RootQueryType',
+    description: 'The root query Type',
+    fields: {
+        testPlans: {
+            type: new GraphQLList(testPlanType),
+            resolve: getTestPlans,
+        },
+        testPlan: {
+            type: testPlanType,
+            args:{
+                id: {
+                    type: new GraphQLNonNull(GraphQLID),
+                    description: 'The id of testPlan'
+                }
+            },
+            resolve: getTestPlanById,
+            reject: getTestPlanById,
+        }
+    }
+})
+
+exports.queryType = rootQueryType;

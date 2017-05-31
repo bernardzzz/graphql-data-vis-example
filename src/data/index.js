@@ -7,17 +7,24 @@ const testPlans = [
         results: [
             {
                 id: 'a-1',
+                date: new Date().getTime(),
+                isArchived: false,
                 data: csv
             },
             {
                 id: 'a-2',
+                date: new Date().getTime(),
+                isArchived: false,
                 data: csv
             },
             {
                 id: 'a-3',
+                date: new Date().getTime(),
+                isArchived: false,
                 data: csv
             }
-        ]
+        ],
+        isArchived: false,
     },
     {
         id: 't-b',
@@ -25,17 +32,24 @@ const testPlans = [
         results: [
             {
                 id: 'b-1',
+                date: new Date().getTime(),
+                isArchived: false,
                 data: csv
             },
             {
                 id: 'b-2',
+                date: new Date().getTime(),
+                isArchived: false,
                 data: csv
             },
             {
                 id: 'b-3',
+                date: new Date().getTime(),
+                isArchived: false,
                 data: csv
             }
-        ]
+        ],
+        isArchived: false,
     },
     {
         id: 't-c',
@@ -43,17 +57,24 @@ const testPlans = [
         results: [
             {
                 id: 'c-1',
+                date: new Date().getTime(),
+                isArchived: false,
                 data: csv
             },
             {
                 id: 'c-2',
+                date: new Date().getTime(),
+                isArchived: false,
                 data: csv
             },
             {
                 id: 'c-3',
+                date: new Date().getTime(),
+                isArchived: false,
                 data: csv
             }
-        ]
+        ],
+        isArchived: false,
     },
 ]
 
